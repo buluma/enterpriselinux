@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - "7"
   schedule:
     - cron: '0 1 * * *'
   workflow_dispatch:
@@ -58,5 +58,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:latest
+            ${{ github.repository }}:7
+            ghcr.io/${{ github.repository }}:7
