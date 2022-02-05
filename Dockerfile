@@ -1,5 +1,5 @@
 FROM robertdebock/enterpriselinux
-ENV container=docker
+ENV container = docker
 
 LABEL org.label-schema.schema-version=1.0 
       org.label-schema.name=Rocky Linux Base Image 
@@ -11,8 +11,8 @@ LABEL org.label-schema.schema-version=1.0
       
 CMD ["/bin/bash"]
 
-LABEL maintainer=Robert de Bock <robert@meinit.nl>
-LABEL build_date=2022-02-05
+LABEL maintainer = Robert de Bock <robert@meinit.nl>
+LABEL build_date = 2022-02-05
 
 VOLUME [/sys/fs/cgroup]
 CMD ["/sbin/init"]
