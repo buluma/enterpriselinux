@@ -12,7 +12,6 @@ RUN yum -y install sudo \
       sudo \
       which \
       hostname \
-      libyaml-devel \
       python3 \
       python3-pip \
       python3-pyyaml \
