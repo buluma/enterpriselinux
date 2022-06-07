@@ -3,7 +3,7 @@ Docker Enterpriselinux
 
 This Dockerfile can build containers capable to use systemd.
 
-[![Build and Push Container](https://github.com/buluma/enterpriselinux/actions/workflows/docker-image.yml/badge.svg)](https://github.com/buluma/enterpriselinux/actions/workflows/docker-image.yml) [![Docker Pulls](https://img.shields.io/docker/pulls/buluma/enterpriselinux)](https://github.com/buluma/enterpriselinux)
+[![Build and Push Container](https://github.com/buluma/enterpriselinux/actions/workflows/docker-image.yml/badge.svg)](https://github.com/buluma/enterpriselinux/actions/workflows/docker-image.yml) ![Docker Pulls](https://img.shields.io/docker/pulls/buluma/enterpriselinux)
 
 Branches
 --------
