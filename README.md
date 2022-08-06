@@ -10,9 +10,10 @@ Branches
 
 This repository has multiple branches that relate to Debian versions.
 
-|Branch |Debian Version|Docker image tag|
+|Branch |EL Version|Docker image tag|
 |-------|--------------|----------------|
 | main     |latest            |latest              |
+| 8 |8  | 8         |
 | 7 |7  | 7         |
 
 Pull strategy
