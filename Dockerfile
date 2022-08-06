@@ -1,6 +1,6 @@
 FROM robertdebock/enterpriselinux
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2022-07-10"
+LABEL build_date="2022-08-06"
 
 ENV container=docker
 
