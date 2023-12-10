@@ -29,34 +29,38 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    needs: test
+    # needs: test
     if: github.ref == 'refs/heads/7'
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: docker/setup-qemu-action@v1
-      - uses: docker/setup-buildx-action@v1
-
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       - name: Login to DockerHub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push image.
+      - name: Set short
+        run: echo "short=${GITHUB_REF##*/}" >> "${GITHUB_ENV}"
+      - name: Set tag
+        run: echo "tag=${short/master/latest}" >> "${GITHUB_ENV}"
+      - name: Build and push
+        id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./
-          file: Dockerfile
-          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ github.repository }}:7
-            ghcr.io/${{ github.repository }}:7
+            ${{ github.repository }}:latest
+
+      # - name: Build and push image.
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     context: ./
+      #     file: Dockerfile
+      #     platforms: linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/amd64/v4,linux/arm64,linux/riscv64,linux/ppc64le,linux/arm/v7
+      #     push: true
+      #     tags: |
+      #       ${{ github.repository }}:latest
+      #       ghcr.io/${{ github.repository }}:latest
