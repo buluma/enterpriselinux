@@ -52,7 +52,7 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ github.repository }}:latest
+            ${{ github.repository }}:8
 
       # - name: Build and push image.
       #   uses: docker/build-push-action@v2
