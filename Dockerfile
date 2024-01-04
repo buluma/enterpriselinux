@@ -1,6 +1,6 @@
-FROM robertdebock/enterpriselinux
+FROM robertdebock/enterpriselinux:latest
 LABEL maintainer="Michael Buluma"
-LABEL build_date="2023-12-09"
+LABEL build_date="2023-01-04"
 
 ENV container=docker
 
