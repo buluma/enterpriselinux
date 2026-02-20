@@ -12,9 +12,9 @@ RUN yum -y install sudo \
       sudo \
       which \
       hostname \
-      python3 \
-      python3-pip \
-      python3-pyyaml \
+      python38 \
+      python38-pip \
+      python38-pyyaml \
  && yum clean all
 
 # Upgrade pip to latest version.
